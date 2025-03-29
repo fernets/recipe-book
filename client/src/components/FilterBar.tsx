@@ -1,5 +1,5 @@
 import { Box, Button, MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const FilterBar: React.FC = () => {
@@ -7,16 +7,20 @@ export const FilterBar: React.FC = () => {
   const [filterType, setFilterType] = useState<'ingredient' | 'country' | 'category'>('ingredient');
   const navigate = useNavigate();
 
-  const handleFilterTypeChange = (e: SelectChangeEvent) => {
+  const handleFilterTypeChange = useCallback((e: SelectChangeEvent) => {
     const newFilterType = e.target.value as 'ingredient' | 'country' | 'category';
     setFilterType(newFilterType);
     setFilter('');
-  };
+  }, []);
 
-  const handleSearch = () => {
+  const handleFilterChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setFilter(e.target.value);
+  }, []);
+
+  const handleSearch = useCallback(() => {
     navigate(`/recipes?${filterType}=${filter}`);
     setFilter('');
-  };
+  }, [filterType, filter, navigate]);
 
   return (
     <Box display="flex" alignItems="center" justifyContent="center" my={2}>
@@ -29,7 +33,7 @@ export const FilterBar: React.FC = () => {
         variant="outlined"
         placeholder="Enter filter value"
         value={filter}
-        onChange={(e) => setFilter(e.target.value)}
+        onChange={handleFilterChange}
       />
       <Button variant="contained" onClick={handleSearch} sx={{ ml: 2 }}>
         Search

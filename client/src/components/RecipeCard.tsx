@@ -1,4 +1,5 @@
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { FilteredMeal, Meal } from '../types';
 
@@ -6,7 +7,7 @@ interface RecipeCardProps {
   recipe: Meal | FilteredMeal;
 }
 
-export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
+const RecipeCardComponent: React.FC<RecipeCardProps> = ({ recipe }) => {
   return (
     <Card>
       <CardActionArea component={Link} to={`/recipe/${recipe.idMeal}`}>
@@ -20,3 +21,5 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
     </Card>
   );
 };
+
+export const RecipeCard = memo(RecipeCardComponent);
