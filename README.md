@@ -48,23 +48,23 @@ The project is organized into two separate folders:
    ```
 2. Install dependencies
 
-```bash
-npm install
-```
-
-```bash
-npm run server:setup
-```
-
-```bash
-npm run client:setup
-```
+   ```bash
+   npm install
+   ```
+    
+   ```bash
+   npm run server:setup
+   ```
+    
+   ```bash
+   npm run client:setup
+   ```
 
 3. Run application
 
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
 4. Go to http://localhost:5173/
 
