@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "45dc6fe6-e888-4d2b-8e63-7dfcd21e7b6a",
+		"name": "Recipe Book API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26777076"
+	},
+	"item": [
+		{
+			"name": "Get all recipes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all recipes by country",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/recipes?country=Japanese",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "Japanese"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all recipes by ingredient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/recipes?ingredient=Bread",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "ingredient",
+							"value": "Bread"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all recipes by category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/recipes?category=Seafood",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Seafood"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get recipe info by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/recipes/53086",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"recipes",
+						"53086"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

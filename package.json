@@ -1,0 +1,22 @@
+{
+  "name": "recipe-book-app",
+  "version": "1.0.0",
+  "author": "Volodymyr Fernets",
+  "description": "Recipe Book App",
+  "main": "index.js",
+  "scripts": {
+    "server:setup": "cd server && npm install",
+    "client:setup": "cd client && npm install",
+    "client:run": "cd client && npm run dev",
+    "server:run": "cd server && npm run serve",
+    "dev": "concurrently \"npm run server:run\" \"npm run client:run\""
+  },
+  "keywords": [
+    "client",
+    "server"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "author": "Volodymyr Fernets",
+  "main": "./dist/src/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "cross-env NODE_ENV=production node dist/src/app.js",
+    "serve": "cross-env NODE_ENV=development ts-node-dev --respawn src/app.ts",
+    "test": "cross-env NODE_ENV=development jest --detectOpenHandles",
+    "lint": "npx eslint . --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier . --check --ignore-unknown",
+    "prettier:fix": "prettier . -w",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "node",
+    "ts",
+    "express",
+    "api",
+    "server"
+  ],
+  "license": "ISC",
+  "description": "task server",
+  "dependencies": {
+    "compression": "^1.8.0",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "helmet-csp": "^4.0.0",
+    "hpp": "^0.2.3",
+    "pino": "^9.6.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/hpp": "^0.2.6",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.14",
+    "@types/pino": "^7.0.5",
+    "@types/supertest": "^6.0.3",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.5",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.5.0",
+    "pino-pretty": "^13.0.0",
+    "prettier": "^3.5.3",
+    "supertest": "^7.1.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "ts-jest": "^29.3.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.28.0"
+  },
+  "overrides": {
+    "eslint": "^9.23.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint",
+      "prettier --write --ignore-unknown"
+    ]
+  }
+}
