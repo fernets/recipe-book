@@ -37,8 +37,8 @@ The project is organized into two separate folders:
 
 ### Prerequisites
 
-- Node.js (v16 or above)
-- npm (or yarn)
+- Node.js (v18 or above)
+- npm
 
 ### Setup
 
